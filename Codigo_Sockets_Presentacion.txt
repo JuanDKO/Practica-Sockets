@@ -18,11 +18,11 @@ Práctica
 
 Caso de uso real
 
-Arquitectura Cliente-Servidor, el
+Arquitectura Ejercicio1.Cliente-Ejercicio1.Servidor, el
 
 Del Ejemplo 0 de sintaxis pura
 
-Servidor multi-cliente con Hilos:
+Ejercicio1.Servidor multi-cliente con Hilos:
 
 Socket como Endpoint y los
 
@@ -36,16 +36,16 @@ persistentes con bucle `while` .
 
 usuarios simultáneos.
 
-1.1 La Arquitectura Cliente-Servidor 🏢
-Cualquier sistema conectado del mundo se apoya en que alguien Pide (Cliente) y alguien Escucha y Responde
-(Servidor).
+1.1 La Arquitectura Ejercicio1.Cliente-Ejercicio1.Servidor 🏢
+Cualquier sistema conectado del mundo se apoya en que alguien Pide (Ejercicio1.Cliente) y alguien Escucha y Responde
+(Ejercicio1.Servidor).
 
-👨‍💻 El Cliente (Iniciador)
+👨‍💻 El Ejercicio1.Cliente (Iniciador)
 Siempre inicia la conexión hacia la IP + Puerto del servidor.
 Duración corta en red (conecta → pide → recibe → cierra).
 Ej: Tu navegador, una app de móvil, un cliente de chat.
 
-🖥️ El Servidor (Oyente)
+🖥️ El Ejercicio1.Servidor (Oyente)
 Programa de bucle infinito esperando llamadas en un Puerto fijo.
 Procesa peticiones y devuelve respuestas a múltiples clientes.
 Ej: Google.com, un servidor de chat, una API REST en producción.
@@ -77,9 +77,9 @@ usamos)
 Para demostrar que los sockets son universales, veamos un ejemplo básico y completo de un cliente TCP en
 lenguaje Python y Node.js.
 
-🐍 Cliente Completo Python
+🐍 Ejercicio1.Cliente Completo Python
 
-🟩 Cliente Completo Node.js
+🟩 Ejercicio1.Cliente Completo Node.js
 
 1
 2
@@ -116,7 +116,7 @@ cliente = socket.socket(socket.AF_INET, socket.SOC
 # 2. Conectar al servidor
 cliente.connect(('localhost', 8080))
 # 3. Enviar mensaje convertido a bytes
-cliente.sendall(b'Hola Servidor Python\n')
+cliente.sendall(b'Hola Ejercicio1.Servidor Python\n')
 # 4. Recibir respuesta leyendo max 1024 bytes
 data = cliente.recv(1024)
 print(f"Recibido: {data.decode('utf-8')}")
@@ -126,7 +126,7 @@ const net = require('net');
 // 1. Crear cliente y conectar
 const cliente = net.createConnection({ port: 8080
 // 2. Al conectar existosamente, enviar informac
-cliente.write('Hola Servidor Node!\n');
+cliente.write('Hola Ejercicio1.Servidor Node!\n');
 });
 // 3. Registrar evento asíncrono para leer datos r
 cliente.on('data', (data) => {
@@ -167,7 +167,7 @@ Baja
 Mientras TCP asegura íntegramente la entrega en orden (ideal para BBDD o Chats), UDP lanza los datos al
 vacío sin esperar confirmación (útil para Videojuegos online o Streaming).
 
-2.2 Funcionamiento del Servidor Java
+2.2 Funcionamiento del Ejercicio1.Servidor Java
 Para establecer nuestra comunicación fiable TCP, usamos dos clases muy marcadas en el ecosistema Java que
 encapsulan toda esa complejidad de la red.
 
@@ -181,7 +181,7 @@ Es el tubo de la conexión activa. Lo devuelve la operadora al hacer `accept()` 
 Tiene sus propios InputStream y OutputStream acoplados para recibir y enviar los textos o datos de una forma natural.
 
 2.3 Las Dos Clases Maestras de Java 🧬
-En `java.net` Java distingue fuertemente el rol Cliente del rol Servidor en dos clases separadas (basado en
+En `java.net` Java distingue fuertemente el rol Ejercicio1.Cliente del rol Ejercicio1.Servidor en dos clases separadas (basado en
 el modelo de Sockets bidireccionales):
 
 🌍 java.net.Socket
@@ -199,7 +199,7 @@ programa hasta que llega una conexión.
 1
 2
 
-// Cliente: conectar al servidor
+// Ejercicio1.Cliente: conectar al servidor
 Socket socket = new Socket("127.0.0.1", 9090)
 
 2.4 Flujo de Datos: I/O Streams 🌊
@@ -264,13 +264,13 @@ Abre puerto, espera y lee
 
 import java.io.*;
 import java.net.*;
-public class Servidor {
+public class Ejercicio1.Servidor {
 public static void main(String[] args) throws Exc
 // 1. Abrir puerto 1234 y esperar conexión
 ServerSocket server = new ServerSocket(1234);
 System.out.println("Esperando...");
 Socket cliente = server.accept(); // ← BLOQUE
-System.out.println("¡Cliente conectado!");
+System.out.println("¡Ejercicio1.Cliente conectado!");
 // 2. Leer mensaje del cliente
 BufferedReader in = new BufferedReader(
 new InputStreamReader(cliente.getInputStr
@@ -304,7 +304,7 @@ Conecta y envía
 
 import java.io.*;
 import java.net.*;
-public class Cliente {
+public class Ejercicio1.Cliente {
 public static void main(String[] args) throws Exc
 // 1. Conectarse al servidor
 Socket socket = new Socket("localhost", 1234)
@@ -434,7 +434,7 @@ try {
 Ejemplo 3: Chat Multi-Usuario con Hilos
 Del servidor de 1 cliente al servidor de ∞ clientes simultáneos.
 
-3.3 Chat en Tiempo Real — Servidor Multihilo ⚡
+3.3 Chat en Tiempo Real — Ejercicio1.Servidor Multihilo ⚡
 Escenario: Múltiples alumnos conectan al mismo servidor de chat. Cada uno en su propio hilo, los mensajes se
 retransmiten a todos (broadcast).
 ServidorChat.java
@@ -538,7 +538,7 @@ Inevitables en tus prácticas. Apréndetelas antes de chocar con ellas:
 
 BindException
 
-Address already in use. Has lanzado tu `Servidor.java` dos veces y el puerto OS sigue
+Address already in use. Has lanzado tu `Ejercicio1.Servidor.java` dos veces y el puerto OS sigue
 ocupado con el proceso anterior. Matar el proceso en el IDE o cambiar el número de puerto.
 
 ConnectException

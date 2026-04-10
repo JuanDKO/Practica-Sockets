@@ -1,9 +1,11 @@
+package Ejercicio1;
+
 import java.io.*;
 import java.net.*;
 
 public class Cliente {
     public static void main(String[] args) {
-        System.out.println("Cliente conectado");
+        System.out.println("Ejercicio1.Cliente conectado");
 
         // Utilizamos try-with-resources para asegurar que todos los flujos de red y
         // teclado
@@ -38,7 +40,7 @@ public class Cliente {
                         if (respuesta.equals("Pasame la cadena")) {
                             // Imprimimos la petición del servidor para que el usuario sepa que debe
                             // escribir algo
-                            System.out.println("Servidor: " + respuesta);
+                            System.out.println("Ejercicio1.Servidor: " + respuesta);
                             out.println(teclado.readLine());
 
                             // Mostramos la respuesta procesada
@@ -53,7 +55,7 @@ public class Cliente {
                         break;
                     default:
                         out.println(opcion);
-                        System.out.println("Servidor: " + in.readLine());
+                        System.out.println("Ejercicio1.Servidor: " + in.readLine());
                         break;
                 }
 
@@ -62,7 +64,7 @@ public class Cliente {
 
             // Enviamos el EXIT al servidor para que cierre correctamente
             out.println("EXIT");
-            System.out.println("Servidor: " + in.readLine());
+            System.out.println("Ejercicio1.Servidor: " + in.readLine());
 
         } catch (IOException e) {
             // Capturamos cualquier error en la red (ej. si el servidor está apagado)

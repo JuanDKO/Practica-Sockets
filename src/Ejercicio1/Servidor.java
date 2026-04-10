@@ -1,16 +1,18 @@
+package Ejercicio1;
+
 import java.io.*;
 import java.net.*;
 
 public class Servidor {
     public static void main(String[] args) {
-        System.out.println("Servidor arrancado y esperando...");
+        System.out.println("Ejercicio1.Servidor arrancado y esperando...");
 
         // Bloque try-with-resources para garantizar el cierre de puertos y flujos
         try (
                 // 1. Abrimos el puerto de escucha del servidor
                 ServerSocket server = new ServerSocket(1234);
 
-                // 2. accept() congela el hilo hasta que llega la conexión de un Cliente.
+                // 2. accept() congela el hilo hasta que llega la conexión de un Ejercicio1.Cliente.
                 // Devuelve un 'Socket' listo para interactuar con ese equipo.
                 Socket cliente = server.accept();
 
